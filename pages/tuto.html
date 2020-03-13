@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>Tutorial</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="https://maxime-rey.github.io/theme/css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="https://maxime-rey.github.io/theme/css/clean-blog.min.css" rel="stylesheet">
+
+        <!-- Code highlight color scheme -->
+            <link href="https://maxime-rey.github.io/theme/css/code_blocks/darkly.css" rel="stylesheet">
+
+
+        <!-- Custom Fonts -->
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+                <meta property="og:locale" content="">
+		<meta property="og:site_name" content="Maxime Rey's website">
+    <link rel="icon" href="/favicon.ico">
+</head>
+
+<body class="page-tuto">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+        <div class="container-fluid">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="https://maxime-rey.github.io/">Maxime Rey's website</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+
+                            <li><a href="https://maxime-rey.github.io/pages/about_me.html">About me</a></li>
+                            <li><a href="https://maxime-rey.github.io/pages/curriculum.html">Curriculum</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Header -->
+        <header class="intro-header" style="background-image: url('https://maxime-rey.github.io/../images/tuto_isaac.png')">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <div class="post-heading">
+                        <h1>Tutorial</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+    <article>
+        <h1><a href="https://docs.getpelican.com/en/stable/content.html">Pelican</a></h1>
+<p>All these are... well, let's say not the easiest. Can update automatically with just the line afterwards. If it doesn't work, use <code>make html</code>. Apparently it works.
+    ### Single instructions</p>
+<div class="highlight"><pre><span></span>To build HTML code (settings is optionnal)  
+- `pelican /home/max/Studies_Work/6_website/content/ -s /home/max/Studies_Work/6_website/pelicanconf.py`
+- `pelican content`
+
+To build only certain content (dunno how this works yet):  
+`pelican --write-selected output/posts/my-post-title.html`
+
+To see the output from python 3 go to the _output_ folder and type:  
+- `python -m http.server`  
+- `pelican --listen`
+
+### Continuous update
+To update continuously both the building of the HTML version and the preview on the navigator, open two windows in the terminal.
+
+- The first one is to check changes and build HTML continuously, go to the main folder and do either of the two following:
+    - `pelican -r /home/max/Studies_Work/6_website/content/`
+    - `pelican --autoreload /home/max/Studies_Work/6_website/content/`
+- In the other tab (to update the navigator continuously)
+    - go into the _output_ folder
+    - `python -m http.server`
+
+Note that the display may not be accurate if the _output_ folder is not emptied.
+</pre></div>
+
+
+<h3>Ultimate command</h3>
+<p>To update changes made to files and update the navigator in a <strong>single command</strong>:<br>
+<code>pelican -r /home/max/Studies_Work/6_website/content/ --listen</code></p>
+<h3>Visualization</h3>
+<p>Go to <a href="http://localhost:8000/">http://localhost:8000/</a> to visualize the result.</p>
+<h1>Push to github (and website)</h1>
+<p>Important to do first: <code>make publish</code> for google analytics.
+Use the following, then simply git commit and push and the website will be updated. It can take up to 10 minutes.</p>
+<div class="highlight"><pre><span></span>cd /home/max/Studies_Work/6_website/
+rm -r ../6.1_Final_Space/*
+cp output/* ../6.1_Final_Space/ -r
+cd ../6.1_Final_Space/
+rm {tags,categories,authors,archives}.html
+git add .
+</pre></div>
+
+
+<p>Now, just do <code>invoke publish "commit message"</code></p>
+<p>Note: keep the file 6.1_Final_Space/googleb30f631c64c09953.html, it's for google stuff.</p>
+<div class="highlight"><pre><span></span>git init
+git remote add origin git@github.com:maxime-rey/maxime-rey.github.io.git
+git add .
+git commit -m &quot;restore commit once again after &#39;not a repo...&#39; problem&quot;
+git push --set-upstream origin master -f
+</pre></div>
+    </article>
+            </div>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                            <li>
+                                <a href="https://github.com/maxime-rey">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x" style="color:#424242"></i>
+                                        <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/pages/contact.html">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x" style="color:#424242"></i>
+                                        <i class="fa fa-envelope fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/astroclimb">
+                                    <span class="fa-stack fa-lg">
+                                        <i class="fa fa-circle fa-stack-2x" style="color:#424242"></i>
+                                        <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                    </span>
+                                </a>
+                            </li>
+                    </ul>
+<p class="copyright text-muted">
+    Blog developped with <a href="http://getpelican.com" style="text-decoration: none;">Peli</a><a href="https://docs.getpelican.com/en/stable/" style="text-decoration: none;">can</a>
+    (<a href="http://python.org" style="text-decoration: none;">Python</a> & 
+    <a href="https://daringfireball.net/projects/markdown/" style="text-decoration: none;">Mark</a><a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet" style="text-decoration: none;">down</a>), 
+    using a bit of <a href="https://html.spec.whatwg.org/" style="text-decoration: none;">HTML</a> and the theme 
+    <a href="https://github.com/gilsondev/pelican-clean-blog/" style="text-decoration: none;">clean-blog</a>. <br />
+    Last update on 
+    <script type="text/javascript"> document.write(document.lastModified.substring(0,10));</script>.        &copy;  Maxime Rey
+</p>                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- jQuery -->
+    <script src="https://maxime-rey.github.io/theme/js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="https://maxime-rey.github.io/theme/js/bootstrap.min.js"></script>
+
+        <!-- Custom Theme JavaScript -->
+        <script src="https://maxime-rey.github.io/theme/js/clean-blog.min.js"></script>
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-145446437-1', 'auto');
+    ga('send', 'pageview');
+</script>
+</body>
+
+</html>
