@@ -86,28 +86,28 @@
         <h1><a href="https://docs.getpelican.com/en/stable/content.html">Pelican</a></h1>
 <p>All these are... well, let's say not the easiest. Can update automatically with just the line afterwards. If it doesn't work, use <code>make html</code>. Apparently it works.
     ### Single instructions</p>
-<div class="highlight"><pre><span></span>To build HTML code (settings is optionnal)  
-- `pelican /home/max/Studies_Work/6_website/content/ -s /home/max/Studies_Work/6_website/pelicanconf.py`
-- `pelican content`
+<div class="highlight"><pre><span></span><span class="nv">To</span> <span class="nv">build</span> <span class="nv">HTML</span> <span class="nv">code</span> <span class="ss">(</span><span class="nv">settings</span> <span class="nv">is</span> <span class="nv">optionnal</span><span class="ss">)</span>  
+<span class="o">-</span> `<span class="nv">pelican</span> <span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">max</span><span class="o">/</span><span class="nv">Studies_Work</span><span class="o">/</span><span class="mi">6</span><span class="nv">_website</span><span class="o">/</span><span class="nv">content</span><span class="o">/</span> <span class="o">-</span><span class="nv">s</span> <span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">max</span><span class="o">/</span><span class="nv">Studies_Work</span><span class="o">/</span><span class="mi">6</span><span class="nv">_website</span><span class="o">/</span><span class="nv">pelicanconf</span>.<span class="nv">py</span>`
+<span class="o">-</span> `<span class="nv">pelican</span> <span class="nv">content</span>`
 
-To build only certain content (dunno how this works yet):  
-`pelican --write-selected output/posts/my-post-title.html`
+<span class="nv">To</span> <span class="nv">build</span> <span class="nv">only</span> <span class="nv">certain</span> <span class="nv">content</span> <span class="ss">(</span><span class="nv">dunno</span> <span class="nv">how</span> <span class="nv">this</span> <span class="nv">works</span> <span class="nv">yet</span><span class="ss">)</span>:  
+`<span class="nv">pelican</span> <span class="o">--</span><span class="nv">write</span><span class="o">-</span><span class="nv">selected</span> <span class="nv">output</span><span class="o">/</span><span class="nv">posts</span><span class="o">/</span><span class="nv">my</span><span class="o">-</span><span class="nv">post</span><span class="o">-</span><span class="nv">title</span>.<span class="nv">html</span>`
 
-To see the output from python 3 go to the _output_ folder and type:  
-- `python -m http.server`  
-- `pelican --listen`
+<span class="nv">To</span> <span class="nv">see</span> <span class="nv">the</span> <span class="nv">output</span> <span class="nv">from</span> <span class="nv">python</span> <span class="mi">3</span> <span class="nv">go</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">_output_</span> <span class="nv">folder</span> <span class="nv">and</span> <span class="nv">type</span>:  
+<span class="o">-</span> `<span class="nv">python</span> <span class="o">-</span><span class="nv">m</span> <span class="nv">http</span>.<span class="nv">server</span>`  
+<span class="o">-</span> `<span class="nv">pelican</span> <span class="o">--</span><span class="nv">listen</span>`
 
-### Continuous update
-To update continuously both the building of the HTML version and the preview on the navigator, open two windows in the terminal.
+### <span class="nv">Continuous</span> <span class="nv">update</span>
+<span class="nv">To</span> <span class="nv">update</span> <span class="nv">continuously</span> <span class="nv">both</span> <span class="nv">the</span> <span class="nv">building</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">HTML</span> <span class="nv">version</span> <span class="nv">and</span> <span class="nv">the</span> <span class="nv">preview</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">navigator</span>, <span class="nv">open</span> <span class="nv">two</span> <span class="nv">windows</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">terminal</span>.
 
-- The first one is to check changes and build HTML continuously, go to the main folder and do either of the two following:
-    - `pelican -r /home/max/Studies_Work/6_website/content/`
-    - `pelican --autoreload /home/max/Studies_Work/6_website/content/`
-- In the other tab (to update the navigator continuously)
-    - go into the _output_ folder
-    - `python -m http.server`
+<span class="o">-</span> <span class="nv">The</span> <span class="nv">first</span> <span class="nv">one</span> <span class="nv">is</span> <span class="nv">to</span> <span class="nv">check</span> <span class="nv">changes</span> <span class="nv">and</span> <span class="nv">build</span> <span class="nv">HTML</span> <span class="nv">continuously</span>, <span class="nv">go</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">main</span> <span class="nv">folder</span> <span class="nv">and</span> <span class="k">do</span> <span class="nv">either</span> <span class="nv">of</span> <span class="nv">the</span> <span class="nv">two</span> <span class="nv">following</span>:
+    <span class="o">-</span> `<span class="nv">pelican</span> <span class="o">-</span><span class="nv">r</span> <span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">max</span><span class="o">/</span><span class="nv">Studies_Work</span><span class="o">/</span><span class="mi">6</span><span class="nv">_website</span><span class="o">/</span><span class="nv">content</span><span class="o">/</span>`
+    <span class="o">-</span> `<span class="nv">pelican</span> <span class="o">--</span><span class="nv">autoreload</span> <span class="o">/</span><span class="nv">home</span><span class="o">/</span><span class="nv">max</span><span class="o">/</span><span class="nv">Studies_Work</span><span class="o">/</span><span class="mi">6</span><span class="nv">_website</span><span class="o">/</span><span class="nv">content</span><span class="o">/</span>`
+<span class="o">-</span> <span class="nv">In</span> <span class="nv">the</span> <span class="nv">other</span> <span class="nv">tab</span> <span class="ss">(</span><span class="nv">to</span> <span class="nv">update</span> <span class="nv">the</span> <span class="nv">navigator</span> <span class="nv">continuously</span><span class="ss">)</span>
+    <span class="o">-</span> <span class="nv">go</span> <span class="nv">into</span> <span class="nv">the</span> <span class="nv">_output_</span> <span class="nv">folder</span>
+    <span class="o">-</span> `<span class="nv">python</span> <span class="o">-</span><span class="nv">m</span> <span class="nv">http</span>.<span class="nv">server</span>`
 
-Note that the display may not be accurate if the _output_ folder is not emptied.
+<span class="nv">Note</span> <span class="nv">that</span> <span class="nv">the</span> <span class="nv">display</span> <span class="nv">may</span> <span class="nv">not</span> <span class="nv">be</span> <span class="nv">accurate</span> <span class="k">if</span> <span class="nv">the</span> <span class="nv">_output_</span> <span class="nv">folder</span> <span class="nv">is</span> <span class="nv">not</span> <span class="nv">emptied</span>.
 </pre></div>
 
 
@@ -119,22 +119,22 @@ Note that the display may not be accurate if the _output_ folder is not emptied.
 <h1>Push to github (and website)</h1>
 <p>Important to do first: <code>make publish</code> for google analytics.
 Use the following, then simply git commit and push and the website will be updated. It can take up to 10 minutes.</p>
-<div class="highlight"><pre><span></span>cd /home/max/Studies_Work/6_website/
-rm -r ../6.1_Final_Space/*
-cp output/* ../6.1_Final_Space/ -r
-cd ../6.1_Final_Space/
-rm {tags,categories,authors,archives}.html
-git add .
+<div class="highlight"><pre><span></span><span class="n">cd</span> <span class="o">/</span><span class="n">home</span><span class="o">/</span><span class="k">max</span><span class="o">/</span><span class="n">Studies_Work</span><span class="o">/</span><span class="mi">6</span><span class="n">_website</span><span class="o">/</span>
+<span class="n">rm</span> <span class="o">-</span><span class="n">r</span> <span class="p">..</span><span class="o">/</span><span class="mi">6</span><span class="p">.</span><span class="mi">1</span><span class="n">_Final_Space</span><span class="cm">/*</span>
+<span class="cm">cp output/* ../6.1_Final_Space/ -r</span>
+<span class="cm">cd ../6.1_Final_Space/</span>
+<span class="cm">rm {tags,categories,authors,archives}.html</span>
+<span class="cm">git add .</span>
 </pre></div>
 
 
 <p>Now, just do <code>invoke publish "commit message"</code></p>
 <p>Note: keep the file 6.1_Final_Space/googleb30f631c64c09953.html, it's for google stuff.</p>
-<div class="highlight"><pre><span></span>git init
-git remote add origin git@github.com:maxime-rey/maxime-rey.github.io.git
-git add .
-git commit -m &quot;restore commit once again after &#39;not a repo...&#39; problem&quot;
-git push --set-upstream origin master -f
+<div class="highlight"><pre><span></span><span class="n">git</span><span class="w"> </span><span class="n">init</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="n">remote</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">origin</span><span class="w"> </span><span class="n">git</span><span class="nv">@github</span><span class="p">.</span><span class="nl">com</span><span class="p">:</span><span class="n">maxime</span><span class="o">-</span><span class="n">rey</span><span class="o">/</span><span class="n">maxime</span><span class="o">-</span><span class="n">rey</span><span class="p">.</span><span class="n">github</span><span class="p">.</span><span class="n">io</span><span class="p">.</span><span class="n">git</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="p">.</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="k">commit</span><span class="w"> </span><span class="o">-</span><span class="n">m</span><span class="w"> </span><span class="ss">&quot;restore commit once again after &#39;not a repo...&#39; problem&quot;</span><span class="w"></span>
+<span class="n">git</span><span class="w"> </span><span class="n">push</span><span class="w"> </span><span class="c1">--set-upstream origin master -f</span>
 </pre></div>
     </article>
             </div>
